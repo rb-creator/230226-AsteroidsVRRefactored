@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class LaserObjectPool : MonoBehaviour
 {
-    private List<GameObject> _pooledObjects = new List<GameObject>();
-    private int _amountToPool = 20;
-
     [SerializeField] private GameObject _laserPrefab;
+
+    private List<GameObject> _pooledObjects = new List<GameObject>();
+    private int _amountToPool = 15;
+
 
     private void Start()
     {

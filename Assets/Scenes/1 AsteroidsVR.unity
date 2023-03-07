@@ -306,7 +306,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d8b449dd1df05cc4a89b75d40412262f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.69
   m_Pitch: 1
@@ -404,11 +404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8adb7f096befe6409f41fdc78a93e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 7205904411246407153, guid: 273f50eb06d06604ab006bb2b852269e,
-    type: 3}
   _triggerButton: XRI_Right_TriggerButton
   _boostButton: XRI_Right_PrimaryButton
-  _fireRate: 0.15
+  _laserFire: {fileID: 8300000, guid: d8b449dd1df05cc4a89b75d40412262f, type: 3}
 --- !u!114 &17946960
 MonoBehaviour:
   m_ObjectHideFlags: 0

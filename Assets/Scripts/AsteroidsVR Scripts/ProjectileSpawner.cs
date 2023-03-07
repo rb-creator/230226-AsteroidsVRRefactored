@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private string _triggerButton;
     [SerializeField] private string _boostButton;
-    [SerializeField] private float _fireRate = 0.15f;
+    private float _fireRate = 0.15f;
     private float _nextFire = 0f;
     private Transform _spawnPoint;
     private AudioSource _audioPlayer;
+    [SerializeField] private AudioClip _laserFire;
     private LaserObjectPool _laserObjectPool;
 
     private void Awake()
@@ -30,20 +30,21 @@ public class ProjectileSpawner : MonoBehaviour
     {
        if (!Input.GetButton(_boostButton))
         {
-            //Right Controller Trigger instantiates laser projectile every x seconds
+            //Right Controller Trigger fires laser projectile every x seconds
             if (Input.GetButton(_triggerButton) && Time.time > _nextFire)
             {
                 //Delay between each laser fire 
                 _nextFire = Time.time + _fireRate;
-                //Instantiate(_projectilePrefab, _spawnPoint.position, _projectilePrefab.transform.rotation);
+                //Get laser from LaserObjectPool
                 GameObject laser = _laserObjectPool.GetPooledObject();
-
+                //Spawn laser at spawnpoint
                 if(laser != null)
                 {
                     laser.transform.position = _spawnPoint.position;
                     laser.SetActive(true);
                 }
-                _audioPlayer.Play();
+                //Play Laser Fire Audio
+                _audioPlayer.PlayOneShot(_laserFire);
             }
         }
     }
