@@ -7,8 +7,8 @@ public class GenerateAsteroidField : MonoBehaviour
 
     public Transform asteroidPrefab;
     public GameObject fieldCentre;
-    public int fieldRadius = 1000;
-    public int asteroidCount = 500;
+    public int fieldRadius = 500;
+    public int asteroidCount = 100;
 
     private Vector3 fieldCentrePos;
 

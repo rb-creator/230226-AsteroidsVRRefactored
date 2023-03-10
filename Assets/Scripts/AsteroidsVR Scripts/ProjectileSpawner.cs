@@ -20,7 +20,6 @@ public class ProjectileSpawner : MonoBehaviour
         _laserObjectPool = GetComponent<LaserObjectPool>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         SpawnProjectile();
@@ -30,7 +29,7 @@ public class ProjectileSpawner : MonoBehaviour
     {
        if (!Input.GetButton(_boostButton))
         {
-            //Right Controller Trigger fires laser projectile every x seconds
+            //Right Controller Trigger fires laser projectile after specific duration
             if (Input.GetButton(_triggerButton) && Time.time > _nextFire)
             {
                 //Delay between each laser fire 
@@ -41,6 +40,7 @@ public class ProjectileSpawner : MonoBehaviour
                 if(laser != null)
                 {
                     laser.transform.position = _spawnPoint.position;
+                    laser.transform.rotation = _spawnPoint.rotation;
                     laser.SetActive(true);
                 }
                 //Play Laser Fire Audio

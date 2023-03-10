@@ -21,11 +21,12 @@ public class DeactivateLaser : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Asteroid"))
+        if (collision.gameObject.CompareTag("Asteroid"))
         {
             gameObject.SetActive(false);
         }
     }
+
 }

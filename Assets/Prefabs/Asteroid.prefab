@@ -141,8 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301aef5c175bd9b44bae69a7ca5c6464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionParticle: {fileID: 7854657636694687736, guid: 180b8d26899824fa8884b05d27ab33c2,
-    type: 3}
+  _explosionParticle: {fileID: 1993499690652893953}
   _explosionAudio: {fileID: 8300000, guid: 622b9175cb1d39641901e0f184392e16, type: 3}
 --- !u!1 &9172333361021107907
 GameObject:
@@ -245,6 +244,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 180b8d26899824fa8884b05d27ab33c2, type: 3}
+--- !u!198 &1993499690652893953 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7854657636694687736, guid: 180b8d26899824fa8884b05d27ab33c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8550942512935173369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5818003312882873030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2744591962666733119, guid: 180b8d26899824fa8884b05d27ab33c2,

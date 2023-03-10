@@ -5,7 +5,7 @@ using UnityEngine;
 public class AsteroidExplosion : MonoBehaviour
 {
     //Asteroid Particle Explosion
-    public ParticleSystem _explosionParticle;
+    private ParticleSystem _explosionParticle;
     private bool _particleEnabled;
     private bool _hasBeenHit;
     private MeshRenderer _asteroidRenderer;
@@ -17,6 +17,7 @@ public class AsteroidExplosion : MonoBehaviour
     void Start()
     {
         _audioPlayer = GameObject.Find("ProjectileSpawner").GetComponent<AudioSource>();
+        _explosionParticle = gameObject.GetComponentInChildren<ParticleSystem>();
 
         //Set particle emission
         var emission = _explosionParticle.emission;
