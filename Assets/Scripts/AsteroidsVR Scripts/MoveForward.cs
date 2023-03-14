@@ -12,7 +12,7 @@ public class MoveForward : MonoBehaviour
     private void Awake()
     {
         _rb =  GetComponent<Rigidbody>();
-        _rocketRb = GameObject.Find("Rocket").GetComponent<Rigidbody>();
+        _rocketRb = GameObject.Find("RocketController").GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()

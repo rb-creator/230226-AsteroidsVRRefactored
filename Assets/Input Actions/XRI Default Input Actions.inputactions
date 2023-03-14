@@ -280,9 +280,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "UI Switch",
+                    "name": "Custom UI Switch",
                     "type": "Button",
-                    "id": "72580744-9ae5-4b5d-afd8-24a759abc5bf",
+                    "id": "1c61a718-13fa-4efd-9c8d-de176a2facf5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Custom HandModel Toggle",
+                    "type": "Button",
+                    "id": "48f386b3-839b-47bd-a6f2-231849835fb0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -468,12 +477,23 @@
                 },
                 {
                     "name": "",
-                    "id": "731e1086-db3f-4892-90ed-ac7d20879645",
+                    "id": "7cc51ffa-8984-4944-9bc7-b5ad5a122d2e",
                     "path": "<XRController>{LeftHand}/secondaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UI Switch",
+                    "action": "Custom UI Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca3bba5a-840f-4b01-9f52-34d5fdd324b1",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Custom HandModel Toggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

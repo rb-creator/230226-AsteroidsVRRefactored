@@ -9,7 +9,6 @@ public class LaserObjectPool : MonoBehaviour
     private List<GameObject> _pooledObjects = new List<GameObject>();
     private int _amountToPool = 15;
 
-
     private void Start()
     {
         for (int i = 0; i < _amountToPool; i++)

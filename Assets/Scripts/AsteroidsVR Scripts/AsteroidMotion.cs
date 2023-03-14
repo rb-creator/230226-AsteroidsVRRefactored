@@ -9,7 +9,7 @@ public class AsteroidMotion : MonoBehaviour
     private float _maxSpinSpeed = 5f;
     private float _minThrust = 0.1f;
     private float _maxThrust = 0.5f;
-    private float spinSpeed;
+    private float _spinSpeed;
 
     void Start()
     {
@@ -18,12 +18,12 @@ public class AsteroidMotion : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up, _spinSpeed * Time.deltaTime);
     }
 
     void SetMotion()
     {
-        spinSpeed = Random.Range(_minSpinSpeed, _maxSpinSpeed);
+        _spinSpeed = Random.Range(_minSpinSpeed, _maxSpinSpeed);
         float thrust = Random.Range(_minThrust, _maxThrust);
 
         Rigidbody asteroidRb = GetComponent<Rigidbody>();
