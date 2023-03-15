@@ -8,9 +8,7 @@ public class ProjectileSpawnerNew : MonoBehaviour
     [SerializeField] private InputActionAsset XRIActions;
     InputActionMap _rightHandActionMap;
     InputAction _boostInputAction;
-    InputAction _boostInputAction;
-
-
+    InputAction _triggerInputAction;
 
     [SerializeField] private string _triggerButton;
     [SerializeField] private string _boostButton;
@@ -26,6 +24,23 @@ public class ProjectileSpawnerNew : MonoBehaviour
         _spawnPoint = GetComponent<Transform>();
         _audioPlayer = GetComponent<AudioSource>();
         _laserObjectPool = GetComponent<LaserObjectPool>();
+
+        _rightHandActionMap = XRIActions.FindActionMap("XRI RightHand RocketController");
+        _boostInputAction = _rightHandActionMap.FindAction("Boost");
+
+        _boostInputAction.performed += context =>
+        _boostInputAction.canceled += context => SpawnProjectile();
+
+
+    }
+
+    private void OnEnable()
+    {
+        _rightHandActionMap.Enable();
+    }
+    private void OnDisable()
+    {
+        _rightHandActionMap.Disable();
     }
 
     void Update()
