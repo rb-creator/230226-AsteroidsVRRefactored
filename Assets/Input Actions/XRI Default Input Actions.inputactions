@@ -278,24 +278,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Custom UI Switch",
-                    "type": "Button",
-                    "id": "1c61a718-13fa-4efd-9c8d-de176a2facf5",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Custom HandModel Toggle",
-                    "type": "Button",
-                    "id": "48f386b3-839b-47bd-a6f2-231849835fb0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -474,28 +456,6 @@
                     "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "7cc51ffa-8984-4944-9bc7-b5ad5a122d2e",
-                    "path": "<XRController>{LeftHand}/secondaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Custom UI Switch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ca3bba5a-840f-4b01-9f52-34d5fdd324b1",
-                    "path": "<XRController>{LeftHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Custom HandModel Toggle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
@@ -602,6 +562,94 @@
                     "processors": "StickDeadzone",
                     "groups": "Continuous Move",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "XRI LeftHand RocketController",
+            "id": "68a43590-cdeb-4542-a394-7eec1740a863",
+            "actions": [
+                {
+                    "name": "SurgeControl",
+                    "type": "Value",
+                    "id": "55075c2d-792f-49cf-8456-d657fb055b45",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RollControl",
+                    "type": "Value",
+                    "id": "261d87eb-2b2c-47e1-9798-78834a42f81e",
+                    "expectedControlType": "Vector2",
+                    "processors": "InvertVector2(invertY=false)",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UI Switch",
+                    "type": "Button",
+                    "id": "14ee8f36-83ec-4b8c-9e49-60e8177eeb54",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HandModel Toggle",
+                    "type": "Button",
+                    "id": "5c163aef-8319-42d9-b5b5-6147eb9d91d5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "40f7f45c-fb5e-4618-935e-f0933e19e3a4",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e90da3d7-79d5-4061-8292-642205de8527",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HandModel Toggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f0aae5e-4e34-4617-96f0-35562a812c87",
+                    "path": "<XRController>{LeftHand}/primary2DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SurgeControl",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9638128-2987-4da6-9304-3b9a769cdcc3",
+                    "path": "<XRController>{LeftHand}/primary2DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RollControl",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1109,6 +1157,94 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "XRI RightHand RocketController",
+            "id": "6ce1aec5-1a8a-4960-89a5-257eb84299e7",
+            "actions": [
+                {
+                    "name": "PitchControl",
+                    "type": "Value",
+                    "id": "48b9bbd8-6cae-4d90-ad57-c1181efb1e7b",
+                    "expectedControlType": "Vector2",
+                    "processors": "InvertVector2(invertX=false)",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "YawControl",
+                    "type": "Value",
+                    "id": "a2527e32-41ea-4679-9a2d-932bb8da12c4",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Boost",
+                    "type": "Value",
+                    "id": "1f74753e-1424-46a4-85a4-b3282c2c49ea",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ShootLaser",
+                    "type": "Button",
+                    "id": "e5e2c929-9920-4a2e-a422-cffb699a6950",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "90193be3-00da-4597-a9a6-da0e6dda210f",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Boost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04f7ffb2-55d5-479f-abf8-9fa4e2cc31ca",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootLaser",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6958f9f7-d4a2-42a4-a8bc-5cc38fa12a5c",
+                    "path": "<XRController>{RightHand}/primary2DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PitchControl",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d150725c-72e2-429c-908e-0fa351c25d73",
+                    "path": "<XRController>{RightHand}/primary2DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "YawControl",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
