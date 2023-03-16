@@ -8,20 +8,11 @@ using System;
 
 public class UI_InteractionController : MonoBehaviour
 {
-    [SerializeField]
-    GameObject UIController;
-
-    [SerializeField]
-    GameObject BaseController;
-
-    [SerializeField]
-    InputActionReference inputActionReference_UISwitcher;
-
+    [SerializeField] GameObject UIController;
+    [SerializeField] GameObject BaseController;
+    [SerializeField] InputActionReference inputActionReference_UISwitcher;
     bool isUICanvasActive = false;
-
-    [SerializeField]
-    GameObject UIGameobjects;
-
+    [SerializeField] GameObject UIGameobjects;
 
     private void OnEnable()
     {
@@ -30,7 +21,6 @@ public class UI_InteractionController : MonoBehaviour
     private void OnDisable()
     {
         inputActionReference_UISwitcher.action.performed -= ActivateUIMode;
-
     }
 
     private void Start()
@@ -39,7 +29,6 @@ public class UI_InteractionController : MonoBehaviour
         if (UIGameobjects != null)
         {
             UIGameobjects.SetActive(false);
-
         }
 
         //Deactivating UI Controller by default
