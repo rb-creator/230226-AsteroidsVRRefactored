@@ -5,23 +5,21 @@ using UnityEngine;
 public class GenerateAsteroidField : MonoBehaviour
 {
 
-    public Transform asteroidPrefab;
-    public GameObject fieldCentre;
-    public int fieldRadius = 500;
-    public int asteroidCount = 100;
-
-    private Vector3 fieldCentrePos;
+    [SerializeField] private Transform _asteroidPrefab;
+    [SerializeField] private int _fieldRadius = 500;
+    [SerializeField] private int _asteroidCount = 100;
+    private Vector3 _fieldCentrePos;
 
     private void Awake()
     {
-        fieldCentrePos = fieldCentre.transform.position;
+        _fieldCentrePos = transform.position;
     }
 
     void Start()
     {
-        for (int loop = 0; loop < asteroidCount; loop++)
+        for (int loop = 0; loop < _asteroidCount; loop++)
         {
-            Transform tempAsteroid = Instantiate(asteroidPrefab, fieldCentrePos + Random.insideUnitSphere * fieldRadius, Random.rotation);
+            Transform tempAsteroid = Instantiate(_asteroidPrefab, _fieldCentrePos + Random.insideUnitSphere * _fieldRadius, Random.rotation);
             tempAsteroid.localScale = tempAsteroid.localScale * Random.Range(0.5f, 5);
         }
     }

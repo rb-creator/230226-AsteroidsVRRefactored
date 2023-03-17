@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/AsteroidsVR.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/1 AsteroidsVR.unity
+    guid: 3a3d6e15a0fb15049afc03c2213d6899
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a8c59ea377391fa4e8bf4d4367e98498,
       type: 2}
