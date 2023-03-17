@@ -5,14 +5,12 @@ using UnityEngine.InputSystem;
 
 public class RocketControllerNew : MonoBehaviour
 {
-    [SerializeField] private InputActionAsset XRIActions;
-    InputActionMap _rightHandActionMap;
-    InputActionMap _leftHandActionMap;
-    InputAction _surgeInputAction;
-    InputAction _rollInputAction;
-    InputAction _pitchInputAction;
-    InputAction _yawInputAction;
-    InputAction _boostInputAction;
+    [SerializeField] private InputActionAsset _xRIActions;
+    InputAction _surgeAction;
+    InputAction _rollAction;
+    InputAction _pitchAction;
+    InputAction _yawAction;
+    InputAction _boostAction;
 
     [SerializeField] private float _surgeSpeed = 1500f;
     [SerializeField] private float _rotateSpeed = 0.5f;
@@ -26,46 +24,44 @@ public class RocketControllerNew : MonoBehaviour
     
     private Rigidbody _rocketRb;
 
+
     private void Awake()
     {
         _rocketRb = GetComponent<Rigidbody>();
 
-        _leftHandActionMap = XRIActions.FindActionMap("XRI LeftHand RocketController");
-        _rightHandActionMap = XRIActions.FindActionMap("XRI RightHand RocketController");
+        _surgeAction = _xRIActions.FindActionMap("XRI LeftHand RocketController").FindAction("SurgeControl");
+        _rollAction = _xRIActions.FindActionMap("XRI LeftHand RocketController").FindAction("RollControl");
 
-        _surgeInputAction = _leftHandActionMap.FindAction("SurgeControl");
-        _rollInputAction = _leftHandActionMap.FindAction("RollControl");
+        _boostAction = _xRIActions.FindActionMap("XRI RightHand RocketController").FindAction("Boost");
+        _pitchAction = _xRIActions.FindActionMap("XRI RightHand RocketController").FindAction("PitchControl");
+        _yawAction = _xRIActions.FindActionMap("XRI RightHand RocketController").FindAction("YawControl");
 
-        _boostInputAction = _rightHandActionMap.FindAction("Boost");
-        _pitchInputAction = _rightHandActionMap.FindAction("PitchControl");
-        _yawInputAction = _rightHandActionMap.FindAction("YawControl");
+        _surgeAction.performed += context => _surgeInput = context.ReadValue<Vector2>();
+        _surgeAction.canceled += context => _surgeInput = Vector2.zero;
 
-        _surgeInputAction.performed += context => _surgeInput = context.ReadValue<Vector2>();
-        _surgeInputAction.canceled += context => _surgeInput = Vector2.zero;
+        _rollAction.performed += context => _rollInput = context.ReadValue<Vector2>();
+        _rollAction.canceled += context => _rollInput = Vector2.zero;
 
-        _rollInputAction.performed += context => _rollInput = context.ReadValue<Vector2>();
-        _rollInputAction.canceled += context => _rollInput = Vector2.zero;
+        _boostAction.performed += context => _boostInput = context.ReadValue<float>();
+        _boostAction.canceled += context => _boostInput = context.ReadValue<float>();
 
-        _boostInputAction.performed += context => _boostInput = context.ReadValue<float>();
-        _boostInputAction.canceled += context => _boostInput = context.ReadValue<float>();
+        _pitchAction.performed += context => _pitchInput = context.ReadValue<Vector2>();
+        _pitchAction.canceled += context => _pitchInput = Vector2.zero;
 
-        _pitchInputAction.performed += context => _pitchInput = context.ReadValue<Vector2>();
-        _pitchInputAction.canceled += context => _pitchInput = Vector2.zero;
-
-        _yawInputAction.performed += context => _yawInput = context.ReadValue<Vector2>();
-        _yawInputAction.canceled += context => _yawInput = Vector2.zero;
+        _yawAction.performed += context => _yawInput = context.ReadValue<Vector2>();
+        _yawAction.canceled += context => _yawInput = Vector2.zero;
     }
 
     private void OnEnable()
     {
-        _leftHandActionMap.Enable();
-        _rightHandActionMap.Enable();
+        _xRIActions.FindActionMap("XRI LeftHand RocketController").Enable();
+        _xRIActions.FindActionMap("XRI RightHand RocketController").Enable();
     }
 
     private void OnDisable()
     {
-        _leftHandActionMap.Disable();
-        _rightHandActionMap.Disable();
+        _xRIActions.FindActionMap("XRI LeftHand RocketController").Disable();
+        _xRIActions.FindActionMap("XRI RightHand RocketController").Disable();
     }
 
     private void FixedUpdate()

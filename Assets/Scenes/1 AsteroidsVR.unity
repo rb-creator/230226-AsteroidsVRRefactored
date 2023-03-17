@@ -3242,6 +3242,7 @@ GameObject:
   - component: {fileID: 895372954}
   - component: {fileID: 895372953}
   - component: {fileID: 895372952}
+  - component: {fileID: 895372955}
   m_Layer: 0
   m_Name: ProjectileSpawner
   m_TagString: Untagged
@@ -3285,7 +3286,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895372950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8adb7f096befe6409f41fdc78a93e10, type: 3}
   m_Name: 
@@ -3389,6 +3390,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &895372955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895372950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f18d966b6b1a34985fba4af186d665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xRIActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  _laserFire: {fileID: 8300000, guid: d8b449dd1df05cc4a89b75d40412262f, type: 3}
 --- !u!1 &903138749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4901,7 +4917,7 @@ MonoBehaviour:
   yawControl: XRI_Right_Primary2DAxis_Horizontal
   boostButton: XRI_Right_PrimaryButton
   _thrustSpeed: 1500
-  _boostSpeed: 10000
+  _boostSpeed: 5000
   _rotateSpeed: 0.5
 --- !u!136 &1470082651
 CapsuleCollider:
