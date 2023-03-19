@@ -12,6 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/1 AsteroidsVR.unity
     guid: 3a3d6e15a0fb15049afc03c2213d6899
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 579e3a60591e18742890b70fc57dc03e,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a8c59ea377391fa4e8bf4d4367e98498,
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 72414291ed174094f9bef2f80bd1822b,
